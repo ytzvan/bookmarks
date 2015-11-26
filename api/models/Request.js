@@ -8,10 +8,14 @@
 module.exports = {
 
   attributes: {
-  	archived: {
-    type: 'boolean',
-    defaultsTo: false
-  }
+	  archived: {
+	    type: 'boolean',
+	    defaultsTo: false
+	  },
+	  linkType: {
+	    type: 'string',
+	    defaultsTo: 'article'
+	  },
   }
 };
 

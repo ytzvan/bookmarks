@@ -1,90 +1,97 @@
+<div class="container-fluid">
+  <div class="row">
+    
+  <%- partial ('sidebar.ejs') %>
 
- 
-  <div class="section no-pad-bot" id="index-banner">
-    <div class="container">
-      <br><br>
-      <h1 class="header center orange-text">Starter Template</h1>
-      <div class="row center">
-        <h5 class="header col s12 light">A modern responsive front-end framework based on Material Design</h5>
-      </div>
-      <div class="row center">
-        <a href="http://materializecss.com/getting-started.html" id="download-button" class="btn-large waves-effect waves-light orange">Get Started</a>
-      </div>
-      <br><br>
-
-    </div>
-  </div>
-
-
-  <div class="container">
+    <div class="col s12 m12 l9">
+        <!-- Teal page content  -->
+    
     <div class="section">
+      <nav>
+    <div class="nav-wrapper red lighten-2">
+      <form>
+        <div class="input-field">
+          <input id="search" type="search" required>
+          <label for="search"><i class="material-icons">search</i></label>
+          <i class="material-icons">close</i>
+        </div>
+      </form>
+    </div>
+  </nav><br>
 
+    <script type="text/javascript">
+        $(document).ready(function(){
+    // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
+        $('.modal-trigger').leanModal();
+      });
+    </script>
       <!--   Icon Section   -->
        <div class="row">
        <% for (link in l) { %>
-        <div class="col s12 m4">
-          <div class="card small">
-            <div class="card-image">
-              <img src="<%= l[link].image %>">
-              <span class="card-title"><%= l[link].title %></span>
+        <div class="col s12 m6 l4">
+          <div class="card small hoverable">
+            <div class="card-image" style=" background: linear-gradient( to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.4) ), url(<%= l[link].image %>);
+            background-position: center; background-size: cover;">
+              <span class="card-title truncate flow-text"><a href="<%= l[link].id %>"><%= l[link].title %></a></span>
             </div>
             <div class="card-content">
-              <p><%= l[link].content %></p>
+              <p class="truncate bookmark-content"><%= l[link].content %></p>
             </div>
             <div class="card-action">
+              <div class=" col s4 m4 l4 bookmark-site">
               <a href="#"><%= l[link].site %></a>
+              </div>
+              <div class="col s8 m8 l8 icons">
+                <i class="fa fa-twitter icon tooltipped" data-position="top" data-delay="25" data-tooltip="Share on Twitter"></i>
+                <i class="fa fa-facebook icon tooltipped" data-position="top" data-delay="25" data-tooltip="Share on Facebook"></i>
+               <i class="fa fa-star icon tooltipped" data-position="top" data-delay="25" data-tooltip="Favorite link"></i>
+                <a href="/request/archive/<%= l[link].id %>" class="bookmark-archive"><i class="fa fa-trash icon tooltipped" data-position="top" data-delay="25" data-tooltip="Archive link"></i></a>
+                <i class="fa fa-globe icon tooltipped" data-position="top" data-delay="25" data-tooltip="Public link"></i>
+              </div>
+              
             </div>
           </div>
         </div>
-<% } %>  
+      <% } %> 
       </div>
 
     </div>
+    <div class="fixed-action-btn" style="bottom: 45px; right: 24px;">
+      <a href="#modal2" class="btn-floating btn-large red modal-trigger">
+        <i class="large material-icons">add</i>
+      </a>
+    </div>
     <br><br>
+       <!-- Modal Trigger -->
 
+      <!-- Modal Structure -->
+  <div id="modal2" class="modal bottom-sheet">
+    <div class="modal-content">
+      <div class="row">
+          <form class="col s12" action="/request/add">
+          <div class="row">
+            <div class="input-field col s10">
+              <i class="material-icons prefix">account_circle</i>
+              <input id="icon_prefix" type="url" name="url" class="validate">
+              <label for="icon_prefix">Url</label>
+            </div>
+            <div class="input-field col s2 right">
+              <button class="btn waves-effect waves-light right" type="submit" name="action">Submit
+                <i class="material-icons">send</i>
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
     <div class="section">
 
     </div>
   </div>
-
-  <footer class="page-footer orange">
-    <div class="container">
-      <div class="row">
-        <div class="col l6 s12">
-          <h5 class="white-text">Company Bio</h5>
-          <p class="grey-text text-lighten-4">We are a team of college students working on this project like it's our full time job. Any amount would help support and continue development on this project and is greatly appreciated.</p>
-
-
-        </div>
-        <div class="col l3 s12">
-          <h5 class="white-text">Settings</h5>
-          <ul>
-            <li><a class="white-text" href="#!">Link 1</a></li>
-            <li><a class="white-text" href="#!">Link 2</a></li>
-            <li><a class="white-text" href="#!">Link 3</a></li>
-            <li><a class="white-text" href="#!">Link 4</a></li>
-          </ul>
-        </div>
-        <div class="col l3 s12">
-          <h5 class="white-text">Connect</h5>
-          <ul>
-            <li><a class="white-text" href="#!">Link 1</a></li>
-            <li><a class="white-text" href="#!">Link 2</a></li>
-            <li><a class="white-text" href="#!">Link 3</a></li>
-            <li><a class="white-text" href="#!">Link 4</a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-    <div class="footer-copyright">
-      <div class="container">
-      Made by <a class="orange-text text-lighten-3" href="http://materializecss.com">Materialize</a>
-      </div>
-    </div>
-  </footer>
-
+  </div>
+  </div>
 
   <!--  Scripts-->
   <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-  <script src="../../bin/materialize.js"></script>
   <script src="js/init.js"></script>

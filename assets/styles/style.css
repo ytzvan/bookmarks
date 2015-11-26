@@ -5,10 +5,76 @@
  *
  * Made By MaterializeCSS.com
  */
-
+body {
+	font-family: 'Lato', sans-serif;
+}
 .icon-block {
   padding: 0 15px;
 }
 .icon-block .material-icons {
 	font-size: inherit;
+}
+.card .card-action {
+	border: 0;
+	padding: 25px 20px;
+}
+.card.small .card-image{
+	height: 200px;
+}
+.card .card-image .card-title {
+	width: 100%;
+}
+.bookmark-description{
+	line-height: 1.5em;
+    height: 3em;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    width: 100%;
+}
+.bookmark-content {
+	font-size: 14px;
+}
+.bookmark-site{
+	 overflow:hidden;
+    text-overflow:ellipsis;
+    white-space: nowrap; 
+    padding: 0 !important;
+}
+.bookmark-archive{
+	color: #333 !important;
+	margin-right: 0 !important;
+}
+.card-title>a {
+	color: white;
+	font-size: 18px;
+}
+.icon{
+	font-size: 17px !important;
+	padding-right: 10px;
+}
+.icons {
+	text-align: right;
+	padding: 0 !important;
+}
+.modal-content {
+	border-radius: 0;
+}
+.collection{
+	margin: 0;
+}
+.wisteria{
+	background-color: #8e44ad !important;
+}
+.wisteriatxt{
+	color: #8e44ad;
+}
+.material-icon {
+	margin-right: 10px;
+    color: white;
+    margin-top: 10px;
+    font-size: 30px !important;
+}
+.padding-top-10{
+	padding-top: 10px !important;
 }
